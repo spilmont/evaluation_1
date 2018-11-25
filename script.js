@@ -1,5 +1,9 @@
-var DepenseV = [500 + " €<br>", 20 + " €<br>", 0 + " €<br>", 90 + " €<br>", 110 + " €<br>", 80 + " €<br>", 45 + " €<br>", 19 + " €<br>", 70 + " €<br>", 50 + " €<br>", 200 + " €<br>", 180 + " €<br>", 30 + " €<br>"];
-var DepenseI = ["loyer<br>", "charge<br>", "renboursement<br>", "eau<br>", "gaz<br>", "électricité<br>", "internet<br>", "assurance habitation<br>", "assurance vehicule<br>", "mutuel santé<br>", "course au mois<br>", "essence<br>", "sortie<br>"];
+var DepenseV = [500 + " €<br>", 20 + " €<br>", 0 + " €<br>", 90 + " €<br>", 110 + " €<br>"
+                , 80 + " €<br>", 45 + " €<br>", 19 + " €<br>", 70 + " €<br>", 50 + " €<br>", 200 + " €<br>", 180 + " €<br>"
+                , 30 + " €<br>"];
+var DepenseI = ["loyer<br>", "charge<br>", "renboursement<br>", "eau<br>", "gaz<br>", "électricité<br>", "internet<br>"
+                , "assurance habitation<br>", "assurance vehicule<br>", "mutuel santé<br>", "course au mois<br>"
+                ,"essence<br>", "sortie<br>"];
 var RecetteV = [1000 + " €<br>", 500 + " €<br>", 0 + " €<br>", 0 + " €<br>",];
 var RecetteI = ["le salaire<br>", "les aides<br>", "les rentes<br>", "autres<br>"];
 var EpargneV = [];
@@ -142,7 +146,8 @@ function resultatP() {
         document.getElementById("resultat-main-box").style.backgroundColor = "red";
         document.getElementById("resultat-main-box").style.color = "white";
         document.getElementById("resultat-main-box").style.animation = "none";
-        document.getElementById("gif").style.display ="none";
+        document.getElementById("gif").style.display = "none";
+        document.getElementById("buy").style.display = "none";
     }
     else if (resultat > 0) {
         document.getElementById('resultatPhrase').innerHTML = `il vous reste ${resultat}€`;
@@ -152,22 +157,26 @@ function resultatP() {
         if (resultat < 1000) {
             document.getElementById("buy").innerHTML = " tu devrais mettre de largent de coté";
             document.getElementById("resultat-main-box").style.animation = "none";
-            document.getElementById("gif").style.display ="none";
+            document.getElementById("gif").style.display = "none";
+            document.getElementById("buy").style.display = "block";
         }
         else if (resultat < 10000) {
             document.getElementById("buy").innerHTML = " achete toi une voiture";
             document.getElementById("resultat-main-box").style.animation = "none";
-            document.getElementById("gif").style.display ="none";
+            document.getElementById("gif").style.display = "none";
+            document.getElementById("buy").style.display = "block";
         }
         else if (resultat < 1000000) {
             document.getElementById("buy").innerHTML = " tu a pensé a t'acheté une maison";
             document.getElementById("resultat-main-box").style.animation = "none";
-            document.getElementById("gif").style.display ="none";
+            document.getElementById("gif").style.display = "none";
+            document.getElementById("buy").style.display = "block";
         }
         else {
             document.getElementById("buy").innerHTML = " vas y profite tu est millionaire";
             document.getElementById("resultat-main-box").style.animation = "a-sec 2s infinite";
-            document.getElementById("gif").style.display ="block";
+            document.getElementById("gif").style.display = "block";
+            document.getElementById("buy").style.display = "block";
 
         }
     } else {
@@ -175,29 +184,30 @@ function resultatP() {
         document.getElementById("resultat-main-box").style.backgroundColor = "white";
         document.getElementById("resultat-main-box").style.color = "black";
         document.getElementById("resultat-main-box").style.animation = "none";
-        document.getElementById("gif").style.display ="none";
+        document.getElementById("gif").style.display = "none";
+        document.getElementById("buy").style.display = "none";
 
 
     }
 }
 
-function reset(){
-    DepenseV.splice(0,DepenseV.length);
-    DepenseI.splice(0,DepenseI.length);
-    RecetteV.splice(0,RecetteV.length);
-    RecetteI.splice(0,RecetteI.length);
-    EpargneV.splice(0,EpargneV.length);
-    EpargneI.splice(0,EpargneI.length);
+function reset() {
+    DepenseV.splice(0, DepenseV.length);
+    DepenseI.splice(0, DepenseI.length);
+    RecetteV.splice(0, RecetteV.length);
+    RecetteI.splice(0, RecetteI.length);
+    EpargneV.splice(0, EpargneV.length);
+    EpargneI.splice(0, EpargneI.length);
     document.getElementById('dep-valeur').innerHTML = `,${DepenseV}`;
     document.getElementById('dep-intitule').innerHTML = `${DepenseI}`;
     document.getElementById('rec-valeur').innerHTML = `,${RecetteV}`;
     document.getElementById('rec-intitule').innerHTML = `${RecetteI}`;
     document.getElementById('epa-valeur').innerHTML = `,${EpargneV}`;
     document.getElementById('epa-intitule').innerHTML = `${EpargneI}`;
-    sommeDep=0;
-    sommeRec=0;
-    sommeEpa=0;
-    resultat=0
+    sommeDep = 0;
+    sommeRec = 0;
+    sommeEpa = 0;
+    resultat = 0
     document.getElementById('total-dep').innerHTML = `${sommeDep} €`;
     document.getElementById('total-rec').innerHTML = `${sommeRec} €`;
     document.getElementById('total-epa').innerHTML = `${sommeEpa} €`;
@@ -205,10 +215,9 @@ function reset(){
     document.getElementById('resultat').innerHTML = `${resultat}€`;
 
 
-
 }
 
 document.getElementById('reset').addEventListener("click", function () {
-reset();
+    reset();
 });
 
