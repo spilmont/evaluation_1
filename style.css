@@ -36,6 +36,7 @@ h1{
     justify-content: space-around;
 }
 #total-main-box{
+    margin-bottom: 2%;
     display: flex;
     justify-content: space-around;
 }
@@ -66,10 +67,24 @@ display: inline-block;
     height: 110px;
     border: black solid;
 }
+#resultat{
+    display: inline-block;
+}
 #reset{
+    margin-top: 2%;
     position: relative;
     left: 48%;
-
+}
+#gif{
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    display: none;
+    background-image: url("crabs.gif");
+}
+#buy{
+    text-align: center;
+    font-size: 2em;
 }
 @keyframes a-sec {
     0%{background-color: green}

@@ -62,7 +62,7 @@ document.getElementById('ajt-dep').addEventListener("click", function () {
     var inputIntDep = document.getElementById('ajIntDep').value;
     var inputValDep = document.getElementById('ajValDep').value;
 
-    if (inputIntDep !== "" && inputValDep !== "") {
+    if (inputIntDep !== "" && inputValDep !== "" && !isNaN(inputValDep)) {
         DepenseV.push(`${inputValDep} €<br>`);
         DepenseI.push(`${inputIntDep}<br>`);
         document.getElementById('dep-valeur').innerHTML = `,${DepenseV}`;
@@ -70,7 +70,6 @@ document.getElementById('ajt-dep').addEventListener("click", function () {
         var inputValDepC = parseInt(inputValDep);
         sommeDep = sommeDep + inputValDepC;
         document.getElementById('total-dep').innerHTML = `${sommeDep} €`;
-
     }
     var sommeBenefice = sommeRec + sommeEpa;
     var resultat = sommeBenefice - sommeDep;
@@ -84,7 +83,7 @@ document.getElementById('ajt-rec').addEventListener("click", function () {
     var inputIntRec = document.getElementById('ajIntRec').value;
     var inputValRec = document.getElementById('ajValRec').value;
 
-    if (inputIntRec !== "" && inputValRec !== "") {
+    if (inputIntRec !== "" && inputValRec !== "" && !isNaN(inputValRec)) {
         RecetteV.push(`${inputValRec} €<br>`);
         RecetteI.push(`${inputIntRec}<br>`);
 
@@ -108,7 +107,7 @@ document.getElementById('ajt-epa').addEventListener("click", function () {
     var inputIntEpa = document.getElementById('ajIntEpa').value;
     var inputValEpa = document.getElementById('ajValEpa').value;
 
-    if (inputIntEpa !== "" && inputValEpa !== "") {
+    if (inputIntEpa !== "" && inputValEpa !== "" && !isNaN(inputValEpa)) {
         EpargneV.push(`${inputValEpa} €<br>`);
         EpargneI.push(`${inputIntEpa}<br>`);
 
@@ -142,26 +141,42 @@ function resultatP() {
         document.getElementById('resultatPhrase').innerHTML = `ATENTION!!! votre debit s'eleve a ${resultat}€`;
         document.getElementById("resultat-main-box").style.backgroundColor = "red";
         document.getElementById("resultat-main-box").style.color = "white";
+        document.getElementById("resultat-main-box").style.animation = "none";
+        document.getElementById("gif").style.display ="none";
     }
     else if (resultat > 0) {
         document.getElementById('resultatPhrase').innerHTML = `il vous reste ${resultat}€`;
         document.getElementById("resultat-main-box").style.backgroundColor = "green";
         document.getElementById("resultat-main-box").style.color = "white";
+        document.getElementById("resultat-main-box").style.animation = "none";
         if (resultat < 1000) {
             document.getElementById("buy").innerHTML = " tu devrais mettre de largent de coté";
+            document.getElementById("resultat-main-box").style.animation = "none";
+            document.getElementById("gif").style.display ="none";
         }
         else if (resultat < 10000) {
             document.getElementById("buy").innerHTML = " achete toi une voiture";
+            document.getElementById("resultat-main-box").style.animation = "none";
+            document.getElementById("gif").style.display ="none";
         }
         else if (resultat < 1000000) {
             document.getElementById("buy").innerHTML = " tu a pensé a t'acheté une maison";
+            document.getElementById("resultat-main-box").style.animation = "none";
+            document.getElementById("gif").style.display ="none";
         }
         else {
             document.getElementById("buy").innerHTML = " vas y profite tu est millionaire";
             document.getElementById("resultat-main-box").style.animation = "a-sec 2s infinite";
+            document.getElementById("gif").style.display ="block";
+
         }
     } else {
         document.getElementById('resultatPhrase').innerHTML = `vous ete a sec`;
+        document.getElementById("resultat-main-box").style.backgroundColor = "white";
+        document.getElementById("resultat-main-box").style.color = "black";
+        document.getElementById("resultat-main-box").style.animation = "none";
+        document.getElementById("gif").style.display ="none";
+
 
     }
 }
@@ -186,7 +201,9 @@ function reset(){
     document.getElementById('total-dep').innerHTML = `${sommeDep} €`;
     document.getElementById('total-rec').innerHTML = `${sommeRec} €`;
     document.getElementById('total-epa').innerHTML = `${sommeEpa} €`;
+    resultatP();
     document.getElementById('resultat').innerHTML = `${resultat}€`;
+
 
 
 }
@@ -194,3 +211,4 @@ function reset(){
 document.getElementById('reset').addEventListener("click", function () {
 reset();
 });
+
