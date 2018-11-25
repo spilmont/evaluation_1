@@ -20,38 +20,41 @@
 
                 </div>
             </div>
-            <input type="text" id="ajIntDep">
-            <input type="text" id="ajValDep">
-            <button id="ajt-dep">send</button>
+            <div id="input-def-box">
+                <input type="text" id="ajIntDep" placeholder="entrer un intitulé">
+                <input type="text" id="ajValDep" placeholder="entrer un nombre">
+                <button id="ajt-dep">send</button>
+            </div>
 
         </aside>
         <aside id="recette-box">
             <span>recette</span>
             <div id="rec-container">
-            <div id="rec-intitule">
+                <div id="rec-intitule">
 
+                </div>
+                <div id="rec-valeur">
+                </div>
             </div>
-            <div id="rec-valeur">
+            <div id="input-rec-box">
+                <input type="text" id="ajIntRec" placeholder="entrer un intitulé">
+                <input type="text" id="ajValRec" placeholder="entrer un nombre">
+                <button id="ajt-rec">send</button>
             </div>
-            </div>
-            <input type="text" id="ajIntRec">
-            <input type="text" id="ajValRec">
-            <button id="ajt-rec">send</button>
-
         </aside>
         <aside id="epargne-box">
             <span>epargne</span>
             <div id="epa-container">
-            <div id="epa-intitule">
-                <ul>
-                </ul>
+                <div id="epa-intitule">
+                </div>
+                <div id="epa-valeur">
+                </div>
             </div>
-            <div id="epa-valeur">
+            <div id="input-epa-box">
+                <input type="text" id="ajIntEpa" placeholder="entrer un intitulé">
+                <input type="text" id="ajValEpa" placeholder="entrer un nombre">
+                <button id="ajt-epa">send</button>
             </div>
-            </div>
-            <input type="text" id="ajIntEpa">
-            <input type="text" id="ajValEpa">
-            <button id="ajt-epa">send</button>
 
         </aside>
 
@@ -74,7 +77,7 @@
     <aside id="resultat-main-box">
         <span>Resultat: </span>
         <div id="resultat"></div>
-        <div id="resultatPhrase" ></div>
+        <div id="resultatPhrase"></div>
         <div id="buy"></div>
     </aside>
     <button id="reset">reset</button>
