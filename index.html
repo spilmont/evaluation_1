@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mensuel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>revenu mensuel</h1></header>
+<section>
+    <aside id="main_box">
+
+        <aside id="depense-box">
+            <span>depense</span>
+            <div id="dep-container">
+                <div id="dep-intitule">
+
+                </div>
+                <div id="dep-valeur">
+
+                </div>
+            </div>
+            <input type="text" id="ajIntDep">
+            <input type="text" id="ajValDep">
+            <button id="ajt-dep">send</button>
+
+        </aside>
+        <aside id="recette-box">
+            <span>recette</span>
+            <div id="rec-container">
+            <div id="rec-intitule">
+
+            </div>
+            <div id="rec-valeur">
+            </div>
+            </div>
+            <input type="text" id="ajIntRec">
+            <input type="text" id="ajValRec">
+            <button id="ajt-rec">send</button>
+
+        </aside>
+        <aside id="epargne-box">
+            <span>epargne</span>
+            <div id="epa-container">
+            <div id="epa-intitule">
+                <ul>
+                </ul>
+            </div>
+            <div id="epa-valeur">
+            </div>
+            </div>
+            <input type="text" id="ajIntEpa">
+            <input type="text" id="ajValEpa">
+            <button id="ajt-epa">send</button>
+
+        </aside>
+
+    </aside>
+    </aside>
+    <aside id="total-main-box">
+        <aside id="total-dep-box">
+            <span>total:</span>
+            <div id="total-dep"></div>
+        </aside>
+        <aside id="total-rec_box">
+            <span>total:</span>
+            <div id="total-rec"></div>
+        </aside>
+        <aside id="total-epa_box">
+            <span>total:</span>
+            <div id="total-epa"></div>
+        </aside>
+    </aside>
+    <aside id="resultat-main-box">
+        <span>Resultat: </span>
+        <div id="resultat"></div>
+        <div id="resultatPhrase" ></div>
+        <div id="buy"></div>
+    </aside>
+    <button id="reset">reset</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

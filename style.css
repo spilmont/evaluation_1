@@ -1,0 +1,81 @@
+body{
+    min-width:982px;
+}
+h1{
+    text-align: center;
+}
+
+#main_box{
+    display: flex;
+    justify-content: space-around;
+}
+#depense-box{
+    width: 22.16%;
+    border: black solid;
+
+}
+#epargne-box{
+    width: 22.16%;
+    border: solid black;
+}
+#recette-box{
+    width: 22.16%;
+    border: black solid;
+}
+#dep-container{
+    display: flex;
+    justify-content: space-around;
+
+}
+#rec-container{
+    display: flex;
+    justify-content: space-around;
+}
+#epa-container{
+    display: flex;
+    justify-content: space-around;
+}
+#total-main-box{
+    display: flex;
+    justify-content: space-around;
+}
+#total-dep-box{
+    width: 22.16%;
+    height: 50px;
+    border: black solid;
+}
+#total-dep{
+display: inline-block;
+}
+#total-rec_box{
+    width: 22.16%;
+    height: 50px;
+    border: black solid;
+}
+#total-rec{
+    display: inline-block;
+}
+#total-epa_box {
+    width: 22.16%;
+    height: 50px;
+    border: black solid;
+}
+#resultat-main-box{
+    margin: auto;
+    width: 89%;
+    height: 110px;
+    border: black solid;
+}
+#reset{
+    position: relative;
+    left: 48%;
+
+}
+@keyframes a-sec {
+    0%{background-color: green}
+    50%{background-color: goldenrod}
+    100%{background-color: green}
+
+}
+
+
